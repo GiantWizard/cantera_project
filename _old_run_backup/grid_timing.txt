@@ -1,0 +1,2 @@
+Grid generation: 100 points, wall-clock time = 12.0499 s
+Average per Cantera run = 120.499 ms

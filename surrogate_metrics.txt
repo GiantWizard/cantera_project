@@ -1,0 +1,9 @@
+CatBoost surrogate
+  best params: {'iterations': 707, 'learning_rate': 0.01501319629441677, 'depth': 3, 'l2_leaf_reg': 0.46444953597948085, 'rsm': 0.8098672139489884}
+  train R2: 0.99905
+  test R2:  0.99765
+
+Gaussian Process surrogate
+  fitted kernel: 15.4**2 * RBF(length_scale=1.35) + WhiteKernel(noise_level=1e-12)
+  train R2: 1.00000
+  test R2:  1.00000

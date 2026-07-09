@@ -1,0 +1,8 @@
+cantera
+numpy
+pandas
+matplotlib
+scikit-learn
+catboost
+optuna
+joblib

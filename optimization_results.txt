@@ -1,0 +1,7 @@
+
+=== Optimization results ===
+CatBoost:  tau*=3.302372e-04 s   predicted X_CO=2.925602e-02   REAL X_CO=2.987641e-02   gap=+6.203886e-04 (+2.077% of real)
+GP:        tau*=3.000828e-04 s   predicted X_CO=3.044159e-02   REAL X_CO=3.044201e-02   gap=+4.157797e-07 (+0.001% of real)
+
+Grid reference (best of the 100 training points):
+  tau=3.000000e-04 s   X_CO=3.044368e-02
