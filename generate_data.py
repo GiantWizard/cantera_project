@@ -1,5 +1,4 @@
-# Step 3: build the training grid by calling the real Cantera simulator
-# (`run_reactor`) at 100 residence times spaced evenly on a log scale.
+# build training grid: run_reactor over 100 log-spaced tau values
 
 import time
 import numpy as np

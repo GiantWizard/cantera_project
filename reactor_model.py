@@ -1,16 +1,4 @@
-# Ground-truth simulator for this project: a well-stirred combustor, a
-# small chamber that fresh methane and air flow into continuously while hot
-# exhaust flows out, held at constant pressure. Chemistry is tracked with
-# GRI-Mech 3.0. This follows Cantera's standard combustor recipe: a hot
-# reactor fed fresh reactants at a controlled mass flow rate and drained to
-# an exhaust reservoir at constant pressure.
-#
-# Input is residence time tau [s], how long a parcel of gas sits in the
-# chamber on average. Output is the CO mole fraction at steady state. The
-# shape isn't a simple curve that flattens out: at short tau the reactor is
-# near blowout and CO is low, at intermediate tau partial oxidation produces
-# a lot of CO, and at long tau that CO gets oxidized further into CO2 and
-# drops back down.
+# well-stirred combustor, ground truth for the surrogates. tau -> X_CO.
 
 import cantera as ct
 
@@ -23,20 +11,14 @@ OXIDIZER = "O2:1, N2:3.76"
 
 
 def run_reactor(tau: float) -> float:
-    """Run the well-stirred combustor at residence time `tau` [s] and
-    return the steady-state CO mole fraction. This is the real simulator
-    that everything else in the project treats as ground truth.
-    """
+    # returns steady-state X_CO for residence time tau [s]
     gas = ct.Solution(MECH)
 
-    # Fresh reactant mixture (used for the inlet reservoir)
     gas.TP = T_IN, P
     gas.set_equivalence_ratio(PHI, FUEL, OXIDIZER)
     inlet = ct.Reservoir(gas)
 
-    # Reactor initially filled with hot equilibrium products so it stays
-    # ignited (matches the standard Cantera combustor recipe).
-    gas.equilibrate("HP")
+    gas.equilibrate("HP")  # start hot so it stays ignited
     combustor = ct.IdealGasReactor(gas)
     combustor.volume = 1.0  # m^3; arbitrary, tau is set via mdot below
 

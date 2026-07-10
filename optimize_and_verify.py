@@ -1,5 +1,4 @@
-# Step 5: use Optuna to find the tau that maximizes X_CO according to each
-# surrogate, then run the real Cantera simulation at that tau and compare.
+# find tau that maximizes X_CO per surrogate, check against real sim
 
 import numpy as np
 import optuna
@@ -46,8 +45,6 @@ def gp_predict(log_tau):
 cat_tau, cat_pred = optimize_surrogate(cat_predict, "CatBoost")
 gp_tau, gp_pred = optimize_surrogate(gp_predict, "GP")
 
-# This is the whole point of the project: check each surrogate's guess
-# against the real, slow simulator instead of trusting its prediction.
 cat_real = run_reactor(cat_tau)
 gp_real = run_reactor(gp_tau)
 
