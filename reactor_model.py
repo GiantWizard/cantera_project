@@ -1,17 +1,16 @@
-"""Ground-truth simulator for this project: a well-stirred combustor, a
-small chamber that fresh methane and air flow into continuously while hot
-exhaust flows out, held at constant pressure. Chemistry is tracked with
-GRI-Mech 3.0. This follows Cantera's standard combustor recipe: a hot
-reactor fed fresh reactants at a controlled mass flow rate and drained to
-an exhaust reservoir at constant pressure.
-
-Input is residence time tau [s], how long a parcel of gas sits in the
-chamber on average. Output is the CO mole fraction at steady state. The
-shape isn't a simple curve that flattens out: at short tau the reactor is
-near blowout and CO is low, at intermediate tau partial oxidation produces
-a lot of CO, and at long tau that CO gets oxidized further into CO2 and
-drops back down.
-"""
+# Ground-truth simulator for this project: a well-stirred combustor, a
+# small chamber that fresh methane and air flow into continuously while hot
+# exhaust flows out, held at constant pressure. Chemistry is tracked with
+# GRI-Mech 3.0. This follows Cantera's standard combustor recipe: a hot
+# reactor fed fresh reactants at a controlled mass flow rate and drained to
+# an exhaust reservoir at constant pressure.
+#
+# Input is residence time tau [s], how long a parcel of gas sits in the
+# chamber on average. Output is the CO mole fraction at steady state. The
+# shape isn't a simple curve that flattens out: at short tau the reactor is
+# near blowout and CO is low, at intermediate tau partial oxidation produces
+# a lot of CO, and at long tau that CO gets oxidized further into CO2 and
+# drops back down.
 
 import cantera as ct
 

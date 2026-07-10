@@ -1,5 +1,5 @@
-"""Step 5: use Optuna to find the tau that maximizes X_CO according to each
-surrogate, then run the real Cantera simulation at that tau and compare."""
+# Step 5: use Optuna to find the tau that maximizes X_CO according to each
+# surrogate, then run the real Cantera simulation at that tau and compare.
 
 import numpy as np
 import optuna

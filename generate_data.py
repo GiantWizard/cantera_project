@@ -1,5 +1,5 @@
-"""Step 3: build the training grid by calling the real Cantera simulator
-(`run_reactor`) at 100 residence times spaced evenly on a log scale."""
+# Step 3: build the training grid by calling the real Cantera simulator
+# (`run_reactor`) at 100 residence times spaced evenly on a log scale.
 
 import time
 import numpy as np

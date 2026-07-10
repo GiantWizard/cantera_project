@@ -1,6 +1,6 @@
-"""Step 4: fit two surrogate models on the grid data, CatBoost (tuned with
-Optuna, reusing the same tuning setup as the chemical_property_predictor
-project) and a Gaussian Process regressor."""
+# Step 4: fit two surrogate models on the grid data, CatBoost (tuned with
+# Optuna, reusing the same tuning setup as the chemical_property_predictor
+# project) and a Gaussian Process regressor.
 
 import joblib
 import numpy as np
