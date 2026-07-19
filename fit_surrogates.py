@@ -62,11 +62,11 @@ gp_model.fit(X_train_s, y_train)
 gp_train_r2 = r2_score(y_train, gp_model.predict(X_train_s))
 gp_test_r2 = r2_score(y_test, gp_model.predict(X_test_s))
 
-print("=== CatBoost ===")
+print("CatBoost:")
 print(f"Best Optuna params: {study.best_params}")
 print(f"Train R2: {cat_train_r2:.5f}   Test R2: {cat_test_r2:.5f}")
 
-print("\n=== Gaussian Process ===")
+print("\nGaussian Process:")
 print(f"Fitted kernel: {gp_model.kernel_}")
 print(f"Train R2: {gp_train_r2:.5f}   Test R2: {gp_test_r2:.5f}")
 
