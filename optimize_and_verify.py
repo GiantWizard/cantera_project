@@ -56,7 +56,7 @@ grid = pd.read_csv("grid_data.csv")
 true_best_row = grid.loc[grid["X_CO"].idxmax()]
 
 report = f"""
-=== Optimization results ===
+Optimization results:
 CatBoost:  tau*={cat_tau:.6e} s   predicted X_CO={cat_pred:.6e}   REAL X_CO={cat_real:.6e}   gap={cat_gap:+.6e} ({100*cat_gap/cat_real:+.3f}% of real)
 GP:        tau*={gp_tau:.6e} s   predicted X_CO={gp_pred:.6e}   REAL X_CO={gp_real:.6e}   gap={gp_gap:+.6e} ({100*gp_gap/gp_real:+.3f}% of real)
 
